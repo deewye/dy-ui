@@ -1,0 +1,91 @@
+
+
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login{
+  height: 100vh;
+  background-color: rgba(0, 115, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexColumn{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+button{
+  height: 44px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #151515;
+}
+input{
+  padding: 14px 16px;
+  border-radius: 6px;
+  border: none;
+}
+
+.container{
+  width: 84%;
+  margin: 0 auto;
+}
+
+  
+ 
+
+.btn{
+  color: #fff;
+  border: none;
+  background-color: #6200EE;
+}
+
+.signBox{
+  width: 430px;
+  margin: auto auto; 
+  padding: 48px 28px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 3px 5px 10px #ccc7c7;
+}
+.signBox h2{
+  font-size: 36px;
+  color: #151515;
+  text-align: center;
+}
+.signBox input{
+  border: 1px solid #EBEBEB;
+}
+.signBox label{
+  margin-top: 10px;
+}
+.signBox .invalid{
+  color: red;
+  border-color: red;
+}
+form.flexColumn{
+  gap: 3px;
+}
+.signBox .btn{
+  margin-top: 20px;
+}
+
+.error{
+  color: red;
+}
+
+ 
+header{
+  background-color: #faebd7;
+  padding: 20px ;
+}
+.logout{
+  width: 100px;
+}
