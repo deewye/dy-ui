@@ -1,13 +1,14 @@
 
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../App";
 
 
 const Login =()=>{
-   
+   const {url} = useContext(UserContext);
     const [email, setEmail] = useState('');  
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    let url = 'https://api-gateway.test.tibiti.io/api/v1'
+   
     function login(e){
         e.preventDefault();
         requery();
