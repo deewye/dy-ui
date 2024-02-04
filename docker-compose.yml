@@ -1,17 +1,18 @@
 version: "3"
 
 services:
-  deewye.ui:
+  deewye.dy-ui:
     container_name: 'deewye.dy-ui'
     image: node:21-alpine3.19
     working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
+    hostname: "localhost"
     ports:
       - "5173:5173"
     networks:
       - deewye-network
-    command: npm run dev
+    command: /bin/sh -c "npm install && npm run dev"
 
 networks:
   deewye-network:
