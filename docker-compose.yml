@@ -4,15 +4,14 @@ services:
   deewye.ui:
     container_name: 'deewye.dy-ui'
     image: node:21-alpine3.19
-    user: "node"
     working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
     ports:
-      - "8081:8081"
+      - "5173:5173"
     networks:
       - deewye-network
-    command: ["npm", "run", "dev"]
+    command: npm run dev
 
 networks:
   deewye-network:
