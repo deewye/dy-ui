@@ -15,7 +15,7 @@ const Login = () => {
   
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('http://localhost:', values)
+        axios.post('https://api-gateway.test.tibiti.io/api/v1/users/login', values)
         .then(result => {
             if(result.data) { 
            
