@@ -34,7 +34,7 @@ input{
 }
 
 .container{
-  width: 84%;
+  width: 85%;
   margin: 0 auto;
 }
 
@@ -89,4 +89,35 @@ header{
 .logout{
   width: 100px;
 }
+h1{
+  font-size: 45px;
+  font-weight: 500;
+  text-align: center;
+  color: #6200EE;
+  margin-top: 30px;
+}
+.grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 30px 0;
+}
 
+@media (max-width: 980px){
+    .grid{
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px){
+  .container{
+    width: 100%;
+    padding: 0 15px;
+  }
+  .grid{
+    max-width: 350px;
+    margin: 0 auto;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}

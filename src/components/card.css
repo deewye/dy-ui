@@ -1,0 +1,47 @@
+.card{
+    padding: 10px;
+    box-shadow: 2px 5px 7px #8c8080;
+}
+.card__top{
+    text-align: center;
+    margin: 15px 0;
+}
+.card__title{
+    font-size: 30px;
+    font-weight: 500;
+    color: rgb(114, 81, 81);
+}
+.card span{
+    font-size: 20px;
+    font-weight: 200;
+}
+.flex{
+    display: flex;
+    gap: 5px;
+    margin: 15px 0;
+}
+.card__footer{
+    padding: 20px 0;
+    text-align: center;
+}
+.price{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+}
+.card button{
+    height: 44px;
+    width: 100px;
+    text-align: center;   
+    background-color: #fff;
+    cursor: pointer;
+    color:rgb(237, 184, 120);
+    border-color:  rgb(237, 184, 120);
+  }
+  button:hover{
+    background-color: rgb(237, 184, 120);
+    color: #fff;
+    border: none;
+  }
+
+  
