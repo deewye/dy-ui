@@ -1,10 +1,12 @@
 
 import { useState, useContext } from "react";
 import { UserContext } from "../App";
+import { Link } from "react-router-dom";
 
 
 const Login =()=>{
-   const {url} = useContext(UserContext);
+  
+  const url = import.meta.env.VITE_URL
     const [email, setEmail] = useState('');  
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -43,21 +45,27 @@ const Login =()=>{
     
     return(
       <div className="login">
+        <h1 className="title">VPS сервер</h1>
         <div className="signBox flexColumn">
-            <h2>Sign in</h2>
+            <h2>Войти</h2>
             
            <form className="flexColumn" onSubmit={login}>
            <span className="error">{error}</span>
-            <label>Your email</label>
-            <input type="text" placeholder="Enter your email" 
+            <input type="text" placeholder="Email@domen.com" 
             value={email} onChange={(e)=> setEmail(e.target.value)}/>
             
-            <label>Your password</label>
-            <input type="password" placeholder="Enter your password" 
+            <input type="text" placeholder="Пароль" 
             value={password} onChange={(e)=> setPassword(e.target.value)}/>
-           <button className="btn">Button</button>
+           <button className="send">Войти</button>
            </form>
-          
+           <div>
+            <p className="text1">Забыли пароль?</p>
+            <span className="line"></span>
+            </div>
+          <div className="flexColumn">
+            <p className="text2">Еще нет аккаунта?</p>
+           <Link to="/signUp"> <button className="account">Создать аккаунта</button></Link>
+          </div>
         </div>
         </div>
     )

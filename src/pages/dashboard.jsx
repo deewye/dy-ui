@@ -1,27 +1,56 @@
-import Card from "../components/card ";
-import {data} from "./data"
+import { Link } from "react-router-dom";
+import Card from "../components/card "; 
+import axios from 'axios'
+import Header from "../components/header";
+import { useState, useEffect } from "react";
+import Carusel from "../components/slider";
+
+
 
 
 const Dashboard = ()=>{
-    const token = JSON.parse(localStorage.getItem('apiToken'));
-
-    if ( token === null) {
-        window.location.replace("/login");
-        return
-    }
+    const token = JSON.parse(localStorage.getItem('apiToken')) || null;
+    const url = import.meta.env.VITE_URL;
+    const[conferences, setConferences] = useState([]);
     function logout(){
      localStorage.removeItem('apiToken');
      window.location.replace("/"); 
     }
+    useEffect(()=>{
+      axios.get(url + '/conferences').then(res => {
+         setConferences( res.data.conferences);
+        //   console.log(conferences)
+       });
+console.log({'Authorization': "Bearer\n" + token})
+      if(token !== null){
+        axios.get(url + '/users/self', 
+        {
+            headers: {
+              Authorization: 'Bearer ' + token //the token is a variable which holds the token
+            }
+           }).then(res=>{
+            console.log(res.data)
+        })
+      } 
+
+   }, [])
+  
+  
     return(
         <div>
-            <header><div className="container"><button className="logout" onClick={logout}>logout</button></div></header>
+          
+            <header>
+                <Header token={token} logout={logout}/>
+                <Carusel data={conferences}/>
+            </header>
                 <div className="container">
-                    <h1>VPS сервер</h1>
+                <h2>Тарифный план</h2>  
+                    
                <div className="grid">
                {
-                    data.map((item) =>{
-                        return <Card data={item} key={item.id}/>
+                    conferences.map((item) =>{
+                        return <Card data={item}/>
+                       
                     })
                 }
                </div>

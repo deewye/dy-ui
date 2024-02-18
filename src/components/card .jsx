@@ -1,15 +1,18 @@
 import "./card.css"
+import {lists} from './data'
 
 const Card = ({data}) =>{
     return(
         <div className="card">
+            <div className="img">
+            <img src={data.previewImageLink} alt="" />
+            </div>
             <div className="card__top">
-                <span>Тарифный план</span>
-                <h3 className="card__title">{data.title}</h3>
+                <p className="card__title">{data.title}</p>
             </div>
         {
-            data.lists.map((item, index) =>{
-                return <div className="flex" key={index}>
+            lists.map((item, index) =>{
+                return <div className="card-flex" key={index}>
                     <img src={item.img} alt="" />
                     <div><p>{item.text}</p>
                     <b>{item.value}</b></div>
@@ -17,7 +20,7 @@ const Card = ({data}) =>{
             } )
         }
        <div className="card__footer">
-       <p className="price">{data.price}</p>
+     <p className="price">180 000 сум/мес </p> 
         <button>Заказать</button>
        </div>
         </div>

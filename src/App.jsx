@@ -4,16 +4,18 @@ import './App.css'
 import Login from "./pages/login"
 import Dashboard from "./pages/dashboard.jsx"
 import { createContext } from "react"
+import SignUp from "./pages/signUp.jsx"
 
 export const UserContext = createContext()
 
 function App() {
-  const url = 'https://api-gateway.test.tibiti.io/api/v1'
+  
   return (
-    <UserContext.Provider value={{url}}> 
+    <UserContext.Provider> 
     <Routes>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/login" element={<Login />} /> 
+      <Route path="/login" element={<Login />} />
+      <Route path="/signUp" element={ < SignUp/>}/>
     </Routes>
     </UserContext.Provider>
   )

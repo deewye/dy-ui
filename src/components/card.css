@@ -1,27 +1,29 @@
 .card{
-    padding: 10px;
     box-shadow: 2px 5px 7px #8c8080;
+    border-radius:20px ;
 }
 .card__top{
     text-align: center;
-    margin: 15px 0;
+    margin: 10px 0;
+}
+
+.img img{
+    width: 100%;
+    border-radius: 20px 20px 0 0;
 }
 .card__title{
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 20px;
     color: rgb(114, 81, 81);
 }
-.card span{
-    font-size: 20px;
-    font-weight: 200;
-}
-.flex{
+
+.card-flex{
+    padding: 3px 10px;
     display: flex;
     gap: 5px;
-    margin: 15px 0;
+   
 }
 .card__footer{
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
 }
 .price{
@@ -38,7 +40,7 @@
     color:rgb(237, 184, 120);
     border-color:  rgb(237, 184, 120);
   }
-  button:hover{
+  .card button:hover{
     background-color: rgb(237, 184, 120);
     color: #fff;
     border: none;

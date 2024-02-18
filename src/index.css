@@ -5,11 +5,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+.title{
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+}
 
 .login{
   height: 100vh;
-  background-color: rgba(0, 115, 255, 0.1);
+  /* background-color: rgba(0, 115, 255, 0.1); */
+  background-image: url(../public/images/login.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -17,7 +26,7 @@
 .flexColumn{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 button{
   height: 44px;
@@ -29,7 +38,6 @@ button{
 }
 input{
   padding: 14px 16px;
-  border-radius: 6px;
   border: none;
 }
 
@@ -41,42 +49,70 @@ input{
   
  
 
-.btn{
-  color: #fff;
-  border: none;
-  background-color: #6200EE;
-}
+
 
 .signBox{
-  width: 430px;
+  width: 400px;
   margin: auto auto; 
-  padding: 48px 28px;
+  padding: 35px;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 3px 5px 10px #ccc7c7;
 }
 .signBox h2{
   font-size: 36px;
+  font-weight: 500;
   color: #151515;
   text-align: center;
 }
 .signBox input{
   border: 1px solid #EBEBEB;
+  background-color: #fff;
+  border-radius: 30px;
+  font-size: medium;
 }
-.signBox label{
-  margin-top: 10px;
+.signBox input:focus{
+  outline: none;
+  background-color: #fff;
 }
+
 .signBox .invalid{
   color: red;
   border-color: red;
 }
-form.flexColumn{
-  gap: 3px;
+
+.signBox .send{
+  border-radius: 30px;
+  background-color: dodgerblue;
+  border: none;
+  color: #fff;
+  font-size: medium;
 }
-.signBox .btn{
+.line{
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: #EBEBEB;
   margin-top: 20px;
 }
-
+.text1{
+  color: #0000ff;
+  font-size: 18px;
+  text-align: center;
+}
+.text2{
+  font-size: 20px;
+  text-align: center;
+}
+.account{
+  background-color: #e3ecff;
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #0000ff;
+  border-radius: 30px;
+  font-size: medium;
+}
 .error{
   color: red;
 }
@@ -84,25 +120,54 @@ form.flexColumn{
  
 header{
   background-color: #faebd7;
-  padding: 20px ;
+  position: relative;
+  margin-bottom: 30px;
 }
-.logout{
-  width: 100px;
+header img{
+   border-radius: 0 0 40px 40px ;
 }
-h1{
-  font-size: 45px;
-  font-weight: 500;
-  text-align: center;
-  color: #6200EE;
-  margin-top: 30px;
-}
+
 .grid{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 25px;
   padding: 30px 0;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%; 
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+ object-fit:cover; 
+}
+
+.sliderBox{
+ height: 450px;
+ position: relative;
+}
+.sliderBox p{
+  position: absolute;
+  left: 7%;
+  color: #fff;
+  font-size: 30px;
+}
+  
 @media (max-width: 980px){
     .grid{
       grid-template-columns: repeat(2, 1fr);
