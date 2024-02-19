@@ -1,5 +1,11 @@
 # DY-UI
 
+### Clone project
+```shell
+git clone https://github.com/deewye/dy-ui.git
+cd dy-ui
+```
+
 ### Run in docker
 
 ```shell
