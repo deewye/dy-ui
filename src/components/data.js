@@ -4,3 +4,6 @@ export const lists=[
     {img: "public/images/cpu.svg", text: "Разделяемый процессор*:", value:"1"}
 ]
 
+
+
+

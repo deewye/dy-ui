@@ -11,7 +11,8 @@ import Carusel from "../components/slider";
 const Dashboard = ()=>{
     const token = JSON.parse(localStorage.getItem('apiToken')) || null;
     const url = import.meta.env.VITE_URL;
-    const[conferences, setConferences] = useState([]);
+    const [conferences, setConferences] = useState([]);
+    const [user, setUser] = useState({})
     function logout(){
      localStorage.removeItem('apiToken');
      window.location.replace("/"); 
@@ -19,37 +20,38 @@ const Dashboard = ()=>{
     useEffect(()=>{
       axios.get(url + '/conferences').then(res => {
          setConferences( res.data.conferences);
-        //   console.log(conferences)
+        //  console.log(conferences)
        });
-console.log({'Authorization': "Bearer\n" + token})
+
       if(token !== null){
         axios.get(url + '/users/self', 
         {
             headers: {
-              Authorization: 'Bearer ' + token //the token is a variable which holds the token
+              Authorization: 'Bearer ' + token 
             }
            }).then(res=>{
             console.log(res.data)
+          setUser(res.data.user);
+             
         })
       } 
 
    }, [])
-  
-  
+
+
     return(
         <div>
           
             <header>
-                <Header token={token} logout={logout}/>
+                <Header user={user} logout={logout} token={token}/>
                 <Carusel data={conferences}/>
             </header>
                 <div className="container">
-                <h2>Тарифный план</h2>  
-                    
+                <h2> Тарифные планы</h2>    
                <div className="grid">
                {
                     conferences.map((item) =>{
-                        return <Card data={item}/>
+                        return <Card data={item} ontogle/>
                        
                     })
                 }

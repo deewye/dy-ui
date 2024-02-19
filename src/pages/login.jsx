@@ -54,7 +54,7 @@ const Login =()=>{
             <input type="text" placeholder="Email@domen.com" 
             value={email} onChange={(e)=> setEmail(e.target.value)}/>
             
-            <input type="text" placeholder="Пароль" 
+            <input type="password" placeholder="Пароль" 
             value={password} onChange={(e)=> setPassword(e.target.value)}/>
            <button className="send">Войти</button>
            </form>
