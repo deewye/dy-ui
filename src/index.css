@@ -112,6 +112,7 @@ input{
   color: #0000ff;
   border-radius: 30px;
   font-size: medium;
+  cursor: pointer;
 }
 .error{
   color: red;
@@ -119,7 +120,6 @@ input{
 
  
 header{
-  background-color: #faebd7;
   position: relative;
   margin-bottom: 30px;
 }

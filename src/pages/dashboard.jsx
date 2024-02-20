@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import Card from "../components/card "; 
+import Card from "../components/card/card"; 
 import axios from 'axios'
-import Header from "../components/header";
+import Header from "../components/header/header";
 import { useState, useEffect } from "react";
 import Carusel from "../components/slider";
 
@@ -30,7 +30,6 @@ const Dashboard = ()=>{
               Authorization: 'Bearer ' + token 
             }
            }).then(res=>{
-            console.log(res.data)
           setUser(res.data.user);
              
         })

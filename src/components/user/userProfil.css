@@ -1,0 +1,73 @@
+
+
+.modal{
+    background-color: #fff;
+    height: 544px;
+    width: 55vw;
+    display: flex;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    border-radius: 30px;
+}
+.modalNavigation-left{
+    width: 20%;
+    padding: 23px;
+    border-right: 1px solid;
+}
+
+.modalNavigation-left .account{
+    text-align: center;
+    padding: 5px 0;
+}
+.modalContent{
+    width: 80%;
+}
+.modalHeader{
+    padding: 20px;
+}
+
+.modalHeader-top,
+.modalHeader__subheader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+     padding: 5px 0; 
+}
+.modalHeader-title{
+    font-size: 25px;
+    font-weight: 600;
+}
+.user{
+    font-size: 20px;
+}
+.modalHeader__subheader .btn{
+    width: 150px;
+    border-color: rgb(45, 30, 255);
+    color: blue;
+}
+
+.close{
+    cursor: pointer;
+}
+.profil{
+    display: flex;
+    border-top: 1px solid;
+    padding: 20px;
+}
+.profil-image{
+    flex: 1 1 300px;
+}
+.profil-content{
+    flex: 2 1 300px;
+}
+.profil-main{
+    height: 300px;
+}
+
+.userData{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
