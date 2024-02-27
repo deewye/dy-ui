@@ -1,0 +1,24 @@
+
+.banner{
+    height: 450px;
+    position: relative;
+}
+.banner__img {
+    width: 100%;
+    height: 100%;
+}
+.banner__img img{
+    width: 100%;
+    height: 100%;
+}
+.banner__text{
+    position: absolute;
+    left: 7%;
+    top: 50%; 
+}
+.banner__text .title{
+    font-size: 35px;
+}
+.banner__text button{
+    width: 250px;
+}

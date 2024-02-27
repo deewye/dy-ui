@@ -2,18 +2,21 @@
 import { useState, useContext } from "react";
 import { UserContext } from "../App";
 import { Link } from "react-router-dom";
+import {Button, Input} from "antd"
 
 
 const Login =()=>{
-  
+  const token = JSON.parse(localStorage.getItem('apiToken')) || null;
   const url = import.meta.env.VITE_URL
     const [email, setEmail] = useState('');  
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-   
+    const [submit, setSubmit] = useState(false); 
+     
     function login(e){
         e.preventDefault();
         requery();
+        setSubmit(!submit)
       }
 
       function requery(){
@@ -28,19 +31,24 @@ const Login =()=>{
         }, 
         body: JSON.stringify(body)
         })
-        
         .then(response =>{
           if(response.status !== 200){
             response.json().then(result => setError( result.message))
           }
           response.json().then(result=>{
+            if(token!==null){
+              localStorage.apiToken = JSON.stringify(result.access_token);
+            }
             localStorage.setItem('apiToken', JSON.stringify(result.access_token)); 
             window.location.replace("/");
-          })   
+          })
+           setSubmit(false)   
       })
         .catch(error =>{
           console.log(error)
-        setError('request failed')})
+        setError('request failed')
+      setSubmit(false)})
+         
       }
     
     return(
@@ -51,12 +59,11 @@ const Login =()=>{
             
            <form className="flexColumn" onSubmit={login}>
            <span className="error">{error}</span>
-            <input type="text" placeholder="Email@domen.com" 
-            value={email} onChange={(e)=> setEmail(e.target.value)}/>
-            
-            <input type="password" placeholder="Пароль" 
-            value={password} onChange={(e)=> setPassword(e.target.value)}/>
-           <button className="send">Войти</button>
+            <Input type="text" placeholder="Email@domen.com" size="large" value={email} 
+            onChange={(e)=> setEmail(e.target.value)} variant="borderless" className="input"/>
+            <Input.Password  placeholder="Пароль" value={password} size="large" variant="borderless"
+            onChange={(e)=> setPassword(e.target.value)}  className="input"/>
+            <Button type="primary" htmlType="submit" size="large" loading={submit}>Войти</Button>
            </form>
            <div>
             <p className="text1">Забыли пароль?</p>
@@ -64,7 +71,8 @@ const Login =()=>{
             </div>
           <div className="flexColumn">
             <p className="text2">Еще нет аккаунта?</p>
-           <Link to="/signUp"> <button className="account">Создать аккаунта</button></Link>
+           <Button type="link" size="large" href="/signUp" className="account">Создать аккаунта</Button>
+           
           </div>
         </div>
         </div>

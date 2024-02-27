@@ -20,6 +20,7 @@
     text-align: center;
     padding: 5px 0;
 }
+
 .modalContent{
     width: 80%;
 }
@@ -45,6 +46,7 @@
     width: 150px;
     border-color: rgb(45, 30, 255);
     color: blue;
+    border-radius: 20px;
 }
 
 .close{

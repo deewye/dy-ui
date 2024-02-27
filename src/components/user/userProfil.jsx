@@ -1,6 +1,7 @@
+import { Button } from "antd"
 import UserData from "../userData"
 import "./userProfil.css"
-
+import {CloseOutlined} from "@ant-design/icons"
 
 const UserProfil = ({data, opened})=>{
     return(
@@ -10,11 +11,11 @@ const UserProfil = ({data, opened})=>{
                 <header className="modalHeader">
                     <div className="modalHeader-top">
                         <p className="modalHeader-title">Профиль</p>
-                        <div className="close" onClick={opened}>X</div>
+                        <CloseOutlined onClick={opened}/>
                     </div>
                     <div className="modalHeader__subheader">
                     <b className="user">{data.username}</b>
-                    <button className="btn">Редактировать</button>
+                    <Button size="large" className="btn" rounded>Редактировать</Button>
                     </div>
             </header>
             <section className="profil">

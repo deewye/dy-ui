@@ -1,3 +1,5 @@
+import { Button, Input } from "antd"
+
  
 
  const SignUp = ()=>{
@@ -7,9 +9,10 @@
              <div className="signBox flexColumn">
                 <h2>Регистрация</h2>
                 <form action="" className="flexColumn">
-                <input type="text" placeholder="Email@domen.com" />
-                <input type="text" placeholder="Пароль" />
-                <button className="send">Создать аккаунта</button>
+                <Input type="text" placeholder="Email@domen.com" size="large" variant="borderless"/>
+                <Input.Password  placeholder="Пароль" value={password} size="large" variant="borderless"
+               onChange={(e)=> setPassword(e.target.value)}  className="input"/>
+               <Button type="primary" htmlType="submit" size="large">Создать аккаунта</Button>
                 </form>
              </div>
         </div>
